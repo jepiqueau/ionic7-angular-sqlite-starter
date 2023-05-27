@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ionic7-angular-sqlite-starter</string>
+    <string name="title_activity_main">ionic7-angular-sqlite-starter</string>
+    <string name="package_name">com.jeep.app.ionic7.angular.sqlite</string>
+    <string name="custom_url_scheme">com.jeep.app.ionic7.angular.sqlite</string>
+</resources>

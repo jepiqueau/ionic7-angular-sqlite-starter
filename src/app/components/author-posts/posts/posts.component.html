@@ -1,0 +1,21 @@
+<ion-list>
+  <ion-list-header>
+    Posts
+  </ion-list-header>
+
+  <ion-item lines="inset" *ngFor="let data of postList">
+    <ion-label class="ion-text-wrap">
+      <h2 id="post_title">{{data.title}}</h2>
+      <h3 id="author_name">{{data.author.name}}</h3>
+      <div id="div-categories"*ngFor="let category of data.categories">
+        <h5 >{{category.name}},</h5>
+      </div>
+      <h5>{{data.text}}</h5>
+    </ion-label>
+
+    <div class="item-post" item-end>
+      <ion-icon name="create" style="zoom:2.0" (click)="updatePost(data)"></ion-icon>
+      <ion-icon name="trash" style="zoom:2.0" (click)="deletePost(data)"></ion-icon>
+    </div>
+  </ion-item>
+</ion-list>

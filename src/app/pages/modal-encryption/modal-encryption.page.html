@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="medium" (click)="close()">Close</ion-button>
+    </ion-buttons>
+    <ion-title>Encryption Modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let dbName of dbList; index as idx">
+    <ion-item mode="ios">
+      <ion-label>{{dbName.split("SQLite.db")[0]}}</ion-label>
+      <ion-toggle id="toggle-modal-encryption" slot="end" [checked]="isEncryptionChecked[idx]" [disabled]="isEncryptionDisabled[idx]" (ionChange)="handleEncryptionToggle(idx)"></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>

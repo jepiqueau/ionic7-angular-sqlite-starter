@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="close()">Close</ion-button>
+    </ion-buttons>
+    <ion-title>Department List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <cmp-department id="departments-cmp-department" [inDepartment]="updDepartment" class="hidden" (outDepartmentEvent)="handleOutDepartment($event)"></cmp-department>
+  <cmp-departments (toUpdateDepartment)="handleToUpdateDepartment($event)"></cmp-departments>
+</ion-content>

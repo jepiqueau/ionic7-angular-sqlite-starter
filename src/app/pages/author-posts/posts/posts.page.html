@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="close()">Close</ion-button>
+    </ion-buttons>
+    <ion-title>Post List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <ion-item id="posts-ion-item-add">
+      <ion-label color='primary'>Post</ion-label>
+      <div class="item-post" item-end>
+        <ion-icon name="create" style="zoom:2.0"  (click)="addPost()"></ion-icon>
+      </div>
+    </ion-item>
+  </ion-list>
+  <cmp-post id="posts-cmp-post-add" class="hidden" (outPostEvent)="handleOutPost($event)"></cmp-post>
+  <cmp-post id="posts-cmp-post-update" [inPost]="updPost" class="hidden" (outPostEvent)="handleOutPost($event)"></cmp-post>
+  <cmp-posts id="posts-cmp-posts" (toUpdatePost)="handleToUpdatePost($event)" (insidePostEvent)="handleInsidePost()"></cmp-posts>
+</ion-content>

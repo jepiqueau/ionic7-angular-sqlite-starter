@@ -1,0 +1,44 @@
+<ion-list lines="full">
+  <ion-list-header id="employee-cmp-list-header">
+    Employee
+  </ion-list-header>
+
+  <form *ngIf="isForm" [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="fg_department">
+      <ion-item>
+        <ion-label color='primary'>Department</ion-label>
+        <div class="item-department" item-end>
+          <ion-icon name="create" style="zoom:2.0" (click)="addDepartment()"></ion-icon>
+          <ion-icon name="list" style="zoom:2.0"  (click)="listDepartment()"></ion-icon>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-select id="employee-cmp-department"
+          placeholder="Select Department"
+          formControlName="department"
+          cancelText="Cancel"
+          okText="OK"
+          required>
+          <ion-select-option *ngFor="let department of departmentList" [value]="department">{{department.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div formGroupName="fg_employee">
+      <ion-item>
+        <ion-label position="floating" color="primary">Name</ion-label>
+        <ion-input id="employee-cmp-name" type="text" formControlName="name" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" color="primary">Title</ion-label>
+        <ion-input id="employee-cmp-title" type="text" formControlName="title"></ion-input>
+      </ion-item>
+    </div>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" shape="full" expand="block" [disabled]="!employeeForm.valid">
+          Submit
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-list>

@@ -1,0 +1,79 @@
+PODS:
+  - Capacitor (5.0.4):
+    - CapacitorCordova
+  - CapacitorApp (5.0.2):
+    - Capacitor
+  - CapacitorCommunitySqlite (5.0.0):
+    - Capacitor
+    - SQLCipher
+    - ZIPFoundation
+  - CapacitorCordova (5.0.4)
+  - CapacitorDialog (5.0.2):
+    - Capacitor
+  - CapacitorHaptics (5.0.2):
+    - Capacitor
+  - CapacitorKeyboard (5.0.2):
+    - Capacitor
+  - CapacitorStatusBar (5.0.2):
+    - Capacitor
+  - CapacitorToast (5.0.2):
+    - Capacitor
+  - SQLCipher (4.5.4):
+    - SQLCipher/standard (= 4.5.4)
+  - SQLCipher/common (4.5.4)
+  - SQLCipher/standard (4.5.4):
+    - SQLCipher/common
+  - ZIPFoundation (0.9.16)
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorApp (from `../../node_modules/@capacitor/app`)"
+  - "CapacitorCommunitySqlite (from `../../node_modules/@capacitor-community/sqlite`)"
+  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorDialog (from `../../node_modules/@capacitor/dialog`)"
+  - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
+  - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
+  - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
+  - "CapacitorToast (from `../../node_modules/@capacitor/toast`)"
+
+SPEC REPOS:
+  trunk:
+    - SQLCipher
+    - ZIPFoundation
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorApp:
+    :path: "../../node_modules/@capacitor/app"
+  CapacitorCommunitySqlite:
+    :path: "../../node_modules/@capacitor-community/sqlite"
+  CapacitorCordova:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorDialog:
+    :path: "../../node_modules/@capacitor/dialog"
+  CapacitorHaptics:
+    :path: "../../node_modules/@capacitor/haptics"
+  CapacitorKeyboard:
+    :path: "../../node_modules/@capacitor/keyboard"
+  CapacitorStatusBar:
+    :path: "../../node_modules/@capacitor/status-bar"
+  CapacitorToast:
+    :path: "../../node_modules/@capacitor/toast"
+
+SPEC CHECKSUMS:
+  Capacitor: d3d4463573438b9fa65326d1f3549da6f4c21634
+  CapacitorApp: 28fef1fd75b2b3686e875216806fb8416d421097
+  CapacitorCommunitySqlite: 8a2b259fe9fdd509e93be6036e1f349493b81aa8
+  CapacitorCordova: b1fe6bf1f36974a8e4a9044b342d22d49c0996d6
+  CapacitorDialog: 01c49f7f4b37e7ad59e38fd317a6e5f006f23cdc
+  CapacitorHaptics: 864585542a435bd41eaabf7f30d9ff5ec03024d3
+  CapacitorKeyboard: e628d4e66d621c69e449945ebabded17c5b9c2e8
+  CapacitorStatusBar: 48f2899f6846cc7d8431b251ebfc58e1c10e3d58
+  CapacitorToast: d785c9169585b9267b8392094298de7cb0eaa16e
+  SQLCipher: 905b145f65f349f26da9e60a19901ad24adcd381
+  ZIPFoundation: d170fa8e270b2a32bef9dcdcabff5b8f1a5deced
+
+PODFILE CHECKSUM: 9b2e6fd0d2a733925d5cca8776db855ba0f43dcf
+
+COCOAPODS: 1.10.0

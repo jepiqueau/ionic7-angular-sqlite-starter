@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="medium" (click)="close()">Close</ion-button>
+    </ion-buttons>
+    <ion-title>Passphrase Modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item-group>
+    <ion-item-divider  mode="ios">
+      <ion-label>Set Initial Passphrase</ion-label>
+    </ion-item-divider>
+    <ion-item mode="ios">
+    <ion-label>Set Passphrase</ion-label>
+    <ion-toggle id="toggle-modal-passphrase" slot="end" [checked]="isPassphraseChecked" [disabled]="isPassphraseDisabled" (ionChange)="handlePassphraseToggle()"></ion-toggle>
+    </ion-item>
+    <ion-item *ngIf="isInputPassphrase" mode="ios">
+      <ion-button slot="end" (click)="handlePassphraseInput()">
+        Set
+      </ion-button>
+      <ion-input id="input-modal-passphrase" placeholder="Enter phrase" autofocus></ion-input>
+    </ion-item>
+    <ion-item *ngIf="isPassphraseDisabled" mode="ios">
+      <ion-label>Clear Passphrase</ion-label>
+      <ion-toggle slot="end"  (ionChange)="handleClearPassphraseToggle()"></ion-toggle>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group *ngIf="isPassphraseSet">
+    <ion-item-divider mode="ios">
+      <ion-label>Change Passphrase</ion-label>
+    </ion-item-divider>
+    <ion-item mode="ios">
+      <ion-label>Change Passphrase</ion-label>
+      <ion-toggle id="toggle-modal-change-passphrase" slot="end" (ionChange)="handleChangePassphraseToggle()"></ion-toggle>
+    </ion-item>
+    <ion-item *ngIf="isInputCheckPassphrase" mode="ios">
+      <ion-button slot="end" (click)="handleOldPassphraseInput()">
+        Check
+      </ion-button>
+      <ion-input id="input-modal-old-passphrase" placeholder="Enter old phrase"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="isInputChangePassphrase" mode="ios">
+      <ion-button slot="end" (click)="handleNewPassphraseInput()">
+        Change
+      </ion-button>
+      <ion-input id="input-modal-new-passphrase" placeholder="Enter new phrase"></ion-input>
+    </ion-item>
+  </ion-item-group>
+
+</ion-list>
+</ion-content>

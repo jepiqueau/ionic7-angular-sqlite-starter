@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="close()">Close</ion-button>
+    </ion-buttons>
+    <ion-title>Employee List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <ion-item id="employees-ion-item-add">
+      <ion-label color='primary'>Employee</ion-label>
+      <div class="item-employee" item-end>
+        <ion-icon name="create" style="zoom:2.0"  (click)="addEmployee()"></ion-icon>
+      </div>
+    </ion-item>
+  </ion-list>
+  <cmp-employee id="employees-cmp-employee-add" class="hidden" (outEmployeeEvent)="handleOutEmployee($event)"></cmp-employee>
+  <cmp-employee id="employees-cmp-employee-update" [inEmployee]="updEmployee" class="hidden" (outEmployeeEvent)="handleOutEmployee($event)"></cmp-employee>
+  <cmp-employees id="employees-cmp-employees" (toUpdateEmployee)="handleToUpdateEmployee($event)" (insideEmployeeEvent)="handleInsideEmployee()"></cmp-employees>
+</ion-content>

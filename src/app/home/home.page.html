@@ -1,20 +1,54 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      SQLite Starter
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="isEncrypt" id="popover-encrypt" >
+        <ion-icon  slot="icon-only" color="dark" name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+      <ion-popover trigger="popover-encrypt" [dismissOnSelect]="true" side="bottom">
+        <ng-template>
+          <ion-content>
+            <ion-list>
+              <ion-item button detail="false" (click)="setPassphrase()">Passphrase</ion-item>
+              <ion-item button detail="false" (click)="dbEncryption()">Encryption</ion-item>
+            </ion-list>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
+      <ion-button *ngIf="isAndroid" (click)="exitApp()">
+        <ion-icon slot="icon-only" color="danger" name="exit-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
+      <ion-title size="large">SQLite Starter</ion-title>
+      <ion-buttons slot="end">
+        <ion-button *ngIf="isAndroid" (click)="exitApp()">
+          <ion-icon slot="icon-only" color="danger" name="exit-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <p align="center"><br><img src="https://avatars3.githubusercontent.com/u/16580653?v=4" width="200" height="200" /></p>
+    <ion-list *ngIf="isListDisplay" id="home-list">
+      <ion-item (click)="authorpostsClick()">
+        <ion-label>
+          Author Posts
+        </ion-label>
+      </ion-item>
+      <ion-item (click)="employeesClick()">
+        <ion-label>
+          Employees
+        </ion-label>
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>

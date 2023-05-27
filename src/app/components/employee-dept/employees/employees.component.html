@@ -1,0 +1,18 @@
+<ion-list>
+  <ion-list-header>
+    Employees
+  </ion-list-header>
+
+  <ion-item lines="inset" *ngFor="let data of employeeList">
+    <ion-label class="ion-text-wrap">
+      <h2 id="employee_name">{{data.name}}</h2>
+      <h3 id="department_name">{{data.department.name}}</h3>
+      <h5>{{data.title}}</h5>
+    </ion-label>
+
+    <div class="item-employee" item-end>
+      <ion-icon name="create" style="zoom:2.0" (click)="updateEmployee(data)"></ion-icon>
+      <ion-icon name="trash" style="zoom:2.0" (click)="deleteEmployee(data)"></ion-icon>
+    </div>
+  </ion-item>
+</ion-list>

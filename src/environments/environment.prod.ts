@@ -1,3 +1,7 @@
 export const environment = {
-  production: true
+  production: true,
+  databaseNames:[
+    {name:"starter_posts"},
+    {name:"starter_employees"},
+  ],
 };

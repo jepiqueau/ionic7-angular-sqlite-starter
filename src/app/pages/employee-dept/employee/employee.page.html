@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Add Employee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <cmp-employee (outEmployeeEvent)="handleOutEmployee($event)"></cmp-employee>
+</ion-content>
