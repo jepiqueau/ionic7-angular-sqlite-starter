@@ -10,8 +10,9 @@
 <ion-content>
   <ion-list *ngFor="let dbName of dbList; index as idx">
     <ion-item mode="ios">
-      <ion-label>{{dbName.split("SQLite.db")[0]}}</ion-label>
-      <ion-toggle id="toggle-modal-encryption" slot="end" [checked]="isEncryptionChecked[idx]" [disabled]="isEncryptionDisabled[idx]" (ionChange)="handleEncryptionToggle(idx)"></ion-toggle>
+      <ion-toggle id="toggle-modal-encryption" slot="end" [checked]="isEncryptionChecked[idx]" [disabled]="isEncryptionDisabled[idx]" (ionChange)="handleEncryptionToggle(idx)">
+        {{dbName.split("SQLite.db")[0]}}
+      </ion-toggle>
     </ion-item>
   </ion-list>
 </ion-content>

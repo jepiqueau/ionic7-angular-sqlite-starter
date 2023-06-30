@@ -1,19 +1,19 @@
 {
   "name": "ionic7-angular-sqlite-starter",
-  "version": "1.0.0",
-  "description": "An Amazing Capacitor App",
+  "version": "1.0.1",
+  "description": "A Starter App for Ionic7-Angular SQLite Capacitor",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Jean Pierre Quéau",
+    "email": "jepi.queau@free.fr"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/jepiqueau/ionic7-angular-sqlite-starter.git"
   },
   "license": "MIT",
   "main": "build/src/index.js",
   "scripts": {
-    "build": "tsc && electron-rebuild",
+    "build": "tsc",
     "electron:start-live": "node ./live-runner.js",
     "electron:start": "npm run build && electron --inspect=5858 ./",
     "electron:pack": "npm run build && electron-builder build --dir -c ./electron-builder.config.json",
@@ -21,10 +21,11 @@
   },
   "dependencies": {
     "@capacitor-community/electron": "^4.1.2",
-    "@capacitor-community/sqlite": "^5.0.0",
-    "@journeyapps/sqlcipher": "^5.3.1",
+    "@capacitor-community/sqlite": "^5.0.4",
+    "better-sqlite3-multiple-ciphers": "^8.4.0",
     "chokidar": "~3.5.3",
     "electron-is-dev": "~2.0.0",
+    "electron-json-storage": "^4.6.0",
     "electron-serve": "~1.1.0",
     "electron-unhandled": "~4.0.1",
     "electron-updater": "~5.0.1",
@@ -33,13 +34,15 @@
     "node-fetch": "2.6.7"
   },
   "devDependencies": {
-    "electron": "^22.0.0",
-    "electron-builder": "24.0.0",
-    "electron-rebuild": "^3.2.7",
+    "@types/better-sqlite3": "^7.6.4",
+    "@types/electron-json-storage": "^4.5.0",
+    "electron": "^25.2.0",
+    "electron-builder": "^24.4.0",
     "typescript": "~4.3.5"
   },
   "keywords": [
     "capacitor",
-    "electron"
+    "electron",
+    "sqlite"
   ]
 }

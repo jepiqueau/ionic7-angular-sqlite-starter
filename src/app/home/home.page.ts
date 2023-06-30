@@ -23,6 +23,7 @@ export class HomePage  implements OnInit {
   isListDisplay: boolean = false;
   isAndroid: boolean = false;
   isNative: boolean = false;
+  isElectron: boolean = false;
   isEncrypt: boolean = false;
 
   constructor(private initAppService: InitializeAppService,
@@ -34,8 +35,11 @@ export class HomePage  implements OnInit {
     if (this.initAppService.platform === 'android') {
       this.isAndroid = true;
     }
+    if (this.initAppService.platform === 'electron') {
+      this.isElectron = true;
+    }
     this.isNative = this.sqliteService.native;
-    this.isEncrypt = this.isNative &&
+    this.isEncrypt = (this.isNative || this.isElectron) &&
       (await this.sqliteService.isInConfigEncryption()).result
       ? true : false;
   }

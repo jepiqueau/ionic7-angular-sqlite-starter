@@ -15,7 +15,9 @@
     </ion-item-divider>
     <ion-item mode="ios">
     <ion-label>Set Passphrase</ion-label>
-    <ion-toggle id="toggle-modal-passphrase" slot="end" [checked]="isPassphraseChecked" [disabled]="isPassphraseDisabled" (ionChange)="handlePassphraseToggle()"></ion-toggle>
+    <ion-toggle id="toggle-modal-passphrase" slot="end" [checked]="isPassphraseChecked" [disabled]="isPassphraseDisabled" (ionChange)="handlePassphraseToggle()">
+      Set Passphrase
+    </ion-toggle>
     </ion-item>
     <ion-item *ngIf="isInputPassphrase" mode="ios">
       <ion-button slot="end" (click)="handlePassphraseInput()">
@@ -24,8 +26,9 @@
       <ion-input id="input-modal-passphrase" placeholder="Enter phrase" autofocus></ion-input>
     </ion-item>
     <ion-item *ngIf="isPassphraseDisabled" mode="ios">
-      <ion-label>Clear Passphrase</ion-label>
-      <ion-toggle slot="end"  (ionChange)="handleClearPassphraseToggle()"></ion-toggle>
+      <ion-toggle slot="end"  (ionChange)="handleClearPassphraseToggle()">
+        Clear Passphrase
+      </ion-toggle>
     </ion-item>
   </ion-item-group>
   <ion-item-group *ngIf="isPassphraseSet">
@@ -33,8 +36,9 @@
       <ion-label>Change Passphrase</ion-label>
     </ion-item-divider>
     <ion-item mode="ios">
-      <ion-label>Change Passphrase</ion-label>
-      <ion-toggle id="toggle-modal-change-passphrase" slot="end" (ionChange)="handleChangePassphraseToggle()"></ion-toggle>
+      <ion-toggle id="toggle-modal-change-passphrase" slot="end" (ionChange)="handleChangePassphraseToggle()">
+        Change Passphrase
+      </ion-toggle>
     </ion-item>
     <ion-item *ngIf="isInputCheckPassphrase" mode="ios">
       <ion-button slot="end" (click)="handleOldPassphraseInput()">

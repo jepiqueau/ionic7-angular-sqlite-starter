@@ -1,5 +1,5 @@
 {
-  "appId": "com.yourdoamnin.yourapp",
+  "appId": "com.jeep.app.ionic7.angular.sqlite",
   "directories": {
     "buildResources": "resources"
   },
@@ -7,11 +7,10 @@
     "assets/**/*",
     "build/**/*",
     "capacitor.config.*",
-    "app/**/*"
+    "app/**/*",
+    "node_modules"
   ],
-  "publish": {
-    "provider": "github"
-  },
+  "publish": "never",
   "nsis": {
     "allowElevation": true,
     "oneClick": false,
@@ -22,7 +21,11 @@
     "icon": "assets/appIcon.ico"
   },
   "mac": {
-    "category": "your.app.category.type",
+    "category": "public.app-category.utilities",
     "target": "dmg"
+  },
+  "linux": {
+    "target": "AppImage",
+    "category": "Utility"
   }
 }

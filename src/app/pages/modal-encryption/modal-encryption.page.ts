@@ -49,9 +49,12 @@ export class ModalEncryptionPage implements OnInit {
     for (let idx:number = 0; idx < this.dbList.length; idx++) {
       const dbName = this.dbList[idx].split("SQLite.db")[0];
       const isEncrypt = (await this.sqliteService.isDatabaseEncrypted(dbName)).result!;
+console.log(`&&& idx ${idx} isEncrypt ${isEncrypt}`);
       this.isEncryptionChecked[idx] = isEncrypt;
       this.isEncryptionDisabled[idx] = isEncrypt;
     }
+    console.log(`&&& isEncryptionChecked  ${this.isEncryptionChecked}`);
+    console.log(`&&& isEncryptionDisabled  ${this.isEncryptionDisabled}`);
   }
 
   close() {

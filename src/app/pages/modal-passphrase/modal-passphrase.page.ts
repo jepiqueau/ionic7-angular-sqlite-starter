@@ -34,19 +34,23 @@ export class ModalPassphrasePage implements OnInit {
   async ngOnInit() {
     this.ionModal = this.elRef.nativeElement.parentNode;
     const isSetPassphrase = (await this.sqliteService.isSecretStored()).result;
-    Keyboard.setResizeMode({
-      mode: KeyboardResize.None
-    });
-    Keyboard.setAccessoryBarVisible({ isVisible: true });
+    if (this.sqliteService.platform !== 'electron') {
+      Keyboard.setResizeMode({
+        mode: KeyboardResize.None
+      });
+      Keyboard.setAccessoryBarVisible({ isVisible: true });
+    }
     if(isSetPassphrase!) {
       this.isPassphrase(true);
       this.isInputPassphrase = false;
     }
   }
   ngOnDestroy(): void {
+    if (this.sqliteService.platform !== 'electron') {
       Keyboard.setResizeMode({
         mode: KeyboardResize.Ionic
       });
+    }
   }
 
   close() {
