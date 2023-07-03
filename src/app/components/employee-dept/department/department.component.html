@@ -1,16 +1,14 @@
 <ion-list lines="full">
-  <ion-list-header>
+  <ion-list-header id="department-cmp-list-header">
     Department
   </ion-list-header>
 
   <form [formGroup]="departmentForm" (ngSubmit)="onSubmit()">
     <ion-item>
-      <ion-label position="floating" color="primary">name</ion-label>
-      <ion-input id="department-cmp-name" type="text" formControlName="name" required></ion-input>
+      <ion-input id="department-cmp-name" type="text" label="name" formControlName="name" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">location</ion-label>
-      <ion-input id="department-cmp-location" type="text" formControlName="location"></ion-input>
+      <ion-input id="department-cmp-location" type="text" label="location" formControlName="location"></ion-input>
     </ion-item>
     <ion-row>
       <ion-col>

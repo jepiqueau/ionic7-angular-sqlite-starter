@@ -2,21 +2,17 @@
 
   <form [formGroup]="authorForm" (ngSubmit)="onSubmit()">
     <ion-item>
-      <ion-label position="floating" color="primary">name</ion-label>
-      <ion-input id="author-cmp-name" type="text" formControlName="name" required></ion-input>
+      <ion-input id="author-cmp-name" type="text" label="name" formControlName="name" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">email</ion-label>
-      <ion-input id="author-cmp-email" type="text" formControlName="email" required></ion-input>
+      <ion-input id="author-cmp-email" type="text" label="email" formControlName="email" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" color="primary">birthday</ion-label>
-      <ion-input id="author-cmp-birthday" type="text" formControlName="birthday"></ion-input>
+      <ion-input id="author-cmp-birthday" type="text" label="birthday" formControlName="birthday"></ion-input>
     </ion-item>
     <!-- add version 2-->
     <ion-item>
-      <ion-label position="floating" color="primary">company</ion-label>
-      <ion-input id="author-cmp-company" type="text" formControlName="company"></ion-input>
+      <ion-input id="author-cmp-company" type="text" label= "company" formControlName="company"></ion-input>
     </ion-item>
     <ion-row>
       <ion-col>

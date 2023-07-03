@@ -33,6 +33,7 @@ export class PostsPage implements OnInit {
   }
 
   async ngOnInit() {
+    console.log(`in PostsPage ngOnInit`)
     await this.authorPostsService.openDatabase();
     await this.authorPostsService.getAllData();
     this.postItemAddEL = this.elementRef.nativeElement.querySelector(`#posts-ion-item-add`);

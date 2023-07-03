@@ -226,7 +226,8 @@ export function setupContentSecurityPolicy(customScheme: string): void {
           electronIsDev
             ? `default-src ${customScheme}://* 'unsafe-inline' devtools://* 'unsafe-eval' data:;
             img-src ${customScheme}: https://avatars3.githubusercontent.com/u/16580653?v=4 blob: data:`
-            : `default-src ${customScheme}://* 'unsafe-inline' data:`,
+            : `default-src ${customScheme}://* 'unsafe-inline' data:;
+            img-src ${customScheme}: https://avatars3.githubusercontent.com/u/16580653?v=4 blob: data:`,
         ],
       },
     });

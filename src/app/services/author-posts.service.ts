@@ -38,8 +38,8 @@ export class AuthorPostsService {
   async initializeDatabase() {
     // create upgrade statements
     await this.sqliteService
-    .addUpgradeStatement({ database: this.databaseName,
-                            upgrade: this.versionUpgrades});
+      .addUpgradeStatement({ database: this.databaseName,
+                              upgrade: this.versionUpgrades});
     // create and/or open the database
     await this.openDatabase();
     this.dbVerService.set(this.databaseName,this.loadToVersion);
@@ -54,7 +54,7 @@ export class AuthorPostsService {
     await this.getAllData();
   }
   async openDatabase() {
-    if(this.sqliteService.native
+    if((this.sqliteService.native || this.sqliteService.platform === "electron")
       && (await this.sqliteService.isInConfigEncryption()).result
       && (await this.sqliteService.isDatabaseEncrypted(this.databaseName)).result) {
       this.mDb = await this.sqliteService

@@ -10,7 +10,6 @@
     "app/**/*",
     "node_modules"
   ],
-  "publish": "never",
   "nsis": {
     "allowElevation": true,
     "oneClick": false,
@@ -21,7 +20,6 @@
     "icon": "assets/appIcon.ico"
   },
   "mac": {
-    "category": "public.app-category.utilities",
     "target": "dmg"
   },
   "linux": {
